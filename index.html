@@ -1,0 +1,94 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Parent's Evening with Romesh Ranganathan</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+    <div class="container">  
+        <header>  
+            <h1>Parent's Evening</h1>  
+            <p>with Romesh Ranganathan</p>  
+        </header>  
+ 
+        <main id="game-container">  
+            <!-- Welcome Screen -->  
+            <section id="welcome-screen" class="screen active">  
+                <h2>Welcome to Parent's Evening!</h2>  
+                <p>In this game, you'll experience the fun of being a celebrity child while your parent decides which questions you should answer.</p>  
+                <p>It's not about what you know, but what your parent thinks you know!</p>  
+  
+                <div class="setup-form">  
+                    <div class="input-group">  
+                        <label for="player-name">Child's Name:</label>  
+                        <input type="text" id="player-name" placeholder="Enter your name">  
+                    </div>  
+  
+                    <div class="input-group">  
+                        <label for="parent-name">Parent's Name:</label>  
+                        <input type="text" id="parent-name" placeholder="Enter parent's name">  
+                    </div>  
+  
+                    <button id="start-game-btn" class="btn-primary">Start Game</button>  
+                </div>  
+            </section>  
+ 
+            <!-- Parent Question Selection Screen -->  
+            <section id="parent-screen" class="screen">  
+                <h2>Parent's Turn</h2>  
+                <p id="parent-prompt">Parent, select which question your child should answer:</p>  
+  
+                <div id="question-options">  
+                    <!-- Question options will be populated by JavaScript -->  
+                </div>  
+  
+                <div class="game-info">  
+                    <p>Questions remaining: <span id="questions-remaining">0</span></p>  
+                    <p>Score: <span id="score">0</span></p>  
+                </div>  
+            </section>  
+  
+            <!-- Child Answering Screen -->  
+            <section id="child-screen" class="screen">  
+                <h2>Time to Answer!</h2>  
+                <p>Your parent has selected a question for you to answer:</p>  
+  
+                <div id="selected-question">  
+                    <!-- Question will be displayed here -->  
+                </div>  
+  
+                <div id="answer-input">  
+                    <!-- Answer input will be displayed here -->  
+                </div>  
+  
+                <button id="submit-answer-btn" class="btn-primary">Submit Answer</button>  
+  
+                <div class="game-info">  
+                    <p>Questions remaining: <span id="child-questions-remaining">0</span></p>  
+                    <p>Score: <span id="child-score">0</span></p>  
+                </div>  
+            </section>  
+ 
+            <!-- Results Screen -->  
+            <section id="results-screen" class="screen">  
+                <h2>Game Results</h2>  
+                <p>How well did your parent know you?</p>  
+  
+                <div id="results-content">  
+                    <!-- Results will be shown here -->  
+                </div>  
+  
+                <button id="play-again-btn" class="btn-primary">Play Again</button>  
+            </section>  
+        </main>  
+  
+        <footer>  
+            <p>Parent's Evening with Romesh Ranganathan - A comedy game show experience</p>  
+        </footer>  
+    </div>  
+  
+    <script src="script.js"></script>  
+</body>  
+</html> 

@@ -1,0 +1,203 @@
+/* Parent's Evening Game Styles */  
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+  
+body {  
+    font-family: 'Arial', sans-serif;  
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);  
+    color: #fff;  
+    min-height: 100vh;  
+    padding: 20px;  
+}  
+ 
+.container {  
+    max-width: 800px;  
+    margin: 0 auto;  
+    background-color: rgba(0, 0, 0, 0.7);  
+    border-radius: 15px;  
+    padding: 20px;  
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);  
+}  
+  
+header {  
+    text-align: center;  
+    margin-bottom: 30px;  
+    padding: 20px;  
+    border-bottom: 3px solid #fdbb2d;  
+}  
+ 
+header h1 {  
+    font-size: 2.5rem;  
+    margin-bottom: 10px;  
+    color: #fdbb2d;  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+}  
+  
+header p {  
+    font-size: 1.2rem;  
+    color: #fff;  
+}  
+  
+.screen {  
+    display: none;  
+    padding: 20px;  
+}  
+ 
+.screen.active {  
+    display: block;  
+    animation: fadeIn 0.5s ease;  
+}  
+  
+@keyframes fadeIn {  
+    from { opacity: 0; }  
+    to { opacity: 1; }  
+}  
+  
+.setup-form {  
+    margin: 30px 0;  
+    text-align: center;  
+}  
+ 
+.input-group {  
+    margin-bottom: 20px;  
+}  
+  
+.input-group label {  
+    display: block;  
+    margin-bottom: 8px;  
+    font-size: 1.1rem;  
+    color: #fdbb2d;  
+}  
+  
+.input-group input {  
+    width: 100%;  
+    max-width: 300px;  
+    padding: 12px;  
+    border-radius: 8px;  
+    border: 2px solid #fdbb2d;  
+    background-color: #333;  
+    color: white;  
+    font-size: 1rem;  
+}  
+ 
+.btn-primary {  
+    background-color: #fdbb2d;  
+    color: #1a2a6c;  
+    border: none;  
+    padding: 12px 25px;  
+    font-size: 1.1rem;  
+    border-radius: 8px;  
+    cursor: pointer;  
+    font-weight: bold;  
+    transition: all 0.3s ease;  
+}  
+  
+.btn-primary:hover {  
+    background-color: #e6a92a;  
+    transform: scale(1.05);  
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  
+}  
+ 
+#question-options {  
+    margin: 30px 0;  
+}  
+  
+.question-option {  
+    background-color: #333;  
+    border: 2px solid #b21f1f;  
+    border-radius: 10px;  
+    padding: 15px;  
+    margin: 10px 0;  
+    cursor: pointer;  
+    transition: all 0.3s ease;  
+}  
+  
+.question-option:hover {  
+    background-color: #444;  
+    border-color: #fdbb2d;  
+    transform: translateY(-3px);  
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);  
+}  
+ 
+.question-option.selected {  
+    background-color: #b21f1f;  
+    border-color: #fdbb2d;  
+}  
+  
+#selected-question {  
+    background-color: #333;  
+    border: 2px solid #fdbb2d;  
+    border-radius: 10px;  
+    padding: 20px;  
+    margin: 20px 0;  
+    font-size: 1.2rem;  
+    text-align: center;  
+}  
+  
+#answer-input {  
+    margin: 20px 0;  
+}  
+ 
+#answer-input input {  
+    width: 100%;  
+    padding: 12px;  
+    border-radius: 8px;  
+    border: 2px solid #fdbb2d;  
+    background-color: #333;  
+    color: white;  
+    font-size: 1rem;  
+}  
+  
+#results-content {  
+    background-color: #333;  
+    border: 2px solid #fdbb2d;  
+    border-radius: 10px;  
+    padding: 20px;  
+    margin: 20px 0;  
+    text-align: center;  
+}  
+  
+.game-info {  
+    margin-top: 20px;  
+    padding: 15px;  
+    background-color: rgba(253, 187, 45, 0.2);  
+    border-radius: 8px;  
+    text-align: center;  
+    font-size: 1.1rem;  
+}  
+ 
+.game-info p {  
+    margin: 5px 0;  
+}  
+  
+.game-info span {  
+    font-weight: bold;  
+    color: #fdbb2d;  
+}  
+  
+footer {  
+    margin-top: 30px;  
+    text-align: center;  
+    padding: 15px;  
+    border-top: 1px solid #fdbb2d;  
+    font-size: 0.9rem;  
+    color: #ccc;  
+}  
+ 
+/* Responsive Design */  
+@media (max-width: 600px) {  
+    .container {  
+        padding: 10px;  
+    }  
+ECHO is on.
+    header h1 {  
+        font-size: 2rem;  
+    }  
+ECHO is on.
+    .input-group input {  
+        max-width: 100%;  
+    }  
+} 
