@@ -1,94 +1,224 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Parent's Evening with Romesh Ranganathan</title>  
-    <link rel="stylesheet" href="styles.css">  
-</head>  
-<body>  
-    <div class="container">  
-        <header>  
-            <h1>Parent's Evening</h1>  
-            <p>with Romesh Ranganathan</p>  
-        </header>  
- 
-        <main id="game-container">  
-            <!-- Welcome Screen -->  
-            <section id="welcome-screen" class="screen active">  
-                <h2>Welcome to Parent's Evening!</h2>  
-                <p>In this game, you'll experience the fun of being a celebrity child while your parent decides which questions you should answer.</p>  
-                <p>It's not about what you know, but what your parent thinks you know!</p>  
-  
-                <div class="setup-form">  
-                    <div class="input-group">  
-                        <label for="player-name">Child's Name:</label>  
-                        <input type="text" id="player-name" placeholder="Enter your name">  
-                    </div>  
-  
-                    <div class="input-group">  
-                        <label for="parent-name">Parent's Name:</label>  
-                        <input type="text" id="parent-name" placeholder="Enter parent's name">  
-                    </div>  
-  
-                    <button id="start-game-btn" class="btn-primary">Start Game</button>  
-                </div>  
-            </section>  
- 
-            <!-- Parent Question Selection Screen -->  
-            <section id="parent-screen" class="screen">  
-                <h2>Parent's Turn</h2>  
-                <p id="parent-prompt">Parent, select which question your child should answer:</p>  
-  
-                <div id="question-options">  
-                    <!-- Question options will be populated by JavaScript -->  
-                </div>  
-  
-                <div class="game-info">  
-                    <p>Questions remaining: <span id="questions-remaining">0</span></p>  
-                    <p>Score: <span id="score">0</span></p>  
-                </div>  
-            </section>  
-  
-            <!-- Child Answering Screen -->  
-            <section id="child-screen" class="screen">  
-                <h2>Time to Answer!</h2>  
-                <p>Your parent has selected a question for you to answer:</p>  
-  
-                <div id="selected-question">  
-                    <!-- Question will be displayed here -->  
-                </div>  
-  
-                <div id="answer-input">  
-                    <!-- Answer input will be displayed here -->  
-                </div>  
-  
-                <button id="submit-answer-btn" class="btn-primary">Submit Answer</button>  
-  
-                <div class="game-info">  
-                    <p>Questions remaining: <span id="child-questions-remaining">0</span></p>  
-                    <p>Score: <span id="child-score">0</span></p>  
-                </div>  
-            </section>  
- 
-            <!-- Results Screen -->  
-            <section id="results-screen" class="screen">  
-                <h2>Game Results</h2>  
-                <p>How well did your parent know you?</p>  
-  
-                <div id="results-content">  
-                    <!-- Results will be shown here -->  
-                </div>  
-  
-                <button id="play-again-btn" class="btn-primary">Play Again</button>  
-            </section>  
-        </main>  
-  
-        <footer>  
-            <p>Parent's Evening with Romesh Ranganathan - A comedy game show experience</p>  
-        </footer>  
-    </div>  
-  
-    <script src="script.js"></script>  
-</body>  
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent's Evening with Romesh Ranganathan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1 class="game-title">Parent's Evening</h1>
+            <p>with Romesh Ranganathan</p>
+        </header>
+
+        <main id="game-container">
+            <!-- Welcome Screen -->
+            <section id="welcome-screen" class="screen active">
+                <h2>Welcome to Parent's Evening!</h2>
+                <p>Three celebrity parents compete to see how well they know their children: Stephanie (7), Bethanie (5), and Varchie (3)!</p>
+                <p>Each round features different challenges: Auctions, Lists, Buzzers, and a Final Risk Round!</p>
+
+                <div class="setup-form">
+                    <div class="input-group">
+                        <label for="parent1-name">Parent 1 Name:</label>
+                        <input type="text" id="parent1-name" placeholder="Enter parent 1 name">
+                        <label for="parent1-child">Child:</label>
+                        <select id="parent1-child">
+                            <option value="Stephanie">Stephanie (7)</option>
+                            <option value="Bethanie">Bethanie (5)</option>
+                            <option value="Varchie">Varchie (3)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="parent2-name">Parent 2 Name:</label>
+                        <input type="text" id="parent2-name" placeholder="Enter parent 2 name">
+                        <label for="parent2-child">Child:</label>
+                        <select id="parent2-child">
+                            <option value="Stephanie">Stephanie (7)</option>
+                            <option value="Bethanie">Bethanie (5)</option>
+                            <option value="Varchie">Varchie (3)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="parent3-name">Parent 3 Name:</label>
+                        <input type="text" id="parent3-name" placeholder="Enter parent 3 name">
+                        <label for="parent3-child">Child:</label>
+                        <select id="parent3-child">
+                            <option value="Stephanie">Stephanie (7)</option>
+                            <option value="Bethanie">Bethanie (5)</option>
+                            <option value="Varchie">Varchie (3)</option>
+                        </select>
+                    </div>
+
+                    <button id="start-game-btn" class="btn-primary">Start Game</button>
+                </div>
+            </section>
+
+            <!-- Round 1: Auction & Trivia -->
+            <section id="round1-screen" class="screen">
+                <h2>Round 1: Auction & Trivia</h2>
+                <p>Parents bid on how many trivia questions their child can answer correctly.</p>
+                
+                <div id="auction-area">
+                    <h3>Auction Phase</h3>
+                    <p>Parent, bid on how many questions your child can answer:</p>
+                    <div class="bid-controls">
+                        <button id="bid-down" class="bid-btn">-</button>
+                        <span id="bid-amount">1</span>
+                        <button id="bid-up" class="bid-btn">+</button>
+                    </div>
+                    <button id="confirm-bid-btn" class="btn-primary">Confirm Bid</button>
+                </div>
+                
+                <div id="trivia-area" style="display:none;">
+                    <h3>Trivia Phase</h3>
+                    <p id="trivia-question">Question will appear here</p>
+                    <div id="trivia-options">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                    </div>
+
+                <button id="skip-round1-btn" class="btn-secondary">Jump to Next Round</button>
+                <div class="game-info">
+                    <p>Current Round: <span id="current-round">1</span></p>
+                    <p>Bank: <span id="bank-amount">£0</span></p>
+                </div>
+
+                <div class="child-points-display">
+                    <h4>Child Points:</h4>
+                    <p>Stephanie: £<span id="child1-points">0</span> | Bethanie: £<span id="child2-points">0</span> | Varchie: £<span id="child3-points">0</span></p>
+                </div>
+            </section>
+
+            <!-- Round 2: Auction & List -->
+            <section id="round2-screen" class="screen">
+                <h2>Round 2: Auction & List</h2>
+                <p>Parents bid on how many list items their child can name correctly.</p>
+                
+                <div id="list-auction-area">
+                    <h3>Auction Phase</h3>
+                    <p>Parent, bid on how many list items your child can name:</p>
+                    <p id="list-category-display" style="font-weight: bold; font-size: 1.2em; color: #fdbb2d; margin: 10px 0;">Category will be shown here</p>
+                    <div class="bid-controls">
+                        <button id="list-bid-down" class="bid-btn">-</button>
+                        <span id="list-bid-amount">1</span>
+                        <button id="list-bid-up" class="bid-btn">+</button>
+                    </div>
+                    <button id="confirm-list-bid-btn" class="btn-primary">Confirm Bid</button>
+                </div>
+                
+                <div id="list-area" style="display:none;">
+                    <h3>List Phase</h3>
+                    <p id="list-question">Name items in the list:</p>
+                    <div id="host-input-area">
+                        <label for="correct-items-input">Number of correct items given by child:</label>
+                        <input type="number" id="correct-items-input" min="0" placeholder="Enter number of correct items">
+                        <button id="submit-correct-items-btn" class="btn-primary">Submit Score</button>
+                    </div>
+                    <button id="skip-round2-btn" class="btn-secondary">Jump to Next Round</button>
+                </div>
+
+                <div class="game-info">
+                    <p>Current Round: <span id="round2-current-round">2</span></p>
+                    <p>Bank: <span id="round2-bank-amount">£0</span></p>
+                </div>
+
+                <div class="child-points-display">
+                    <h4>Child Points:</h4>
+                    <p>Stephanie: £<span id="child1-points">0</span> | Bethanie: £<span id="child2-points">0</span> | Varchie: £<span id="child3-points">0</span></p>
+                </div>
+            </section>
+
+            <!-- Round 3: Picture & Answer -->
+            <section id="round3-screen" class="screen">
+                <h2>Round 3: Picture & Answer</h2>
+                <p>Host shows pictures and decides which child answers and if the answer is correct.</p>
+
+                <div id="picture-area">
+                    <h3>Picture Shown</h3>
+                    <div class="picture-display">
+                        <img id="round3-picture" src="https://placehold.co/300" alt="Picture for child to name">
+                        <p id="picture-description">Picture will be shown here</p>
+                    </div>
+
+                    <div id="child-selection">
+                        <h4>Which child will answer?</h4>
+                        <div class="child-buttons">
+                            <button id="child1-answer-btn" class="btn-child">Stephanie (7)</button>
+                            <button id="child2-answer-btn" class="btn-child">Bethanie (5)</button>
+                            <button id="child3-answer-btn" class="btn-child">Varchie (3)</button>
+                        </div>
+                    </div>
+
+                    <div id="answer-controls">
+                        <button id="mark-correct-btn" class="btn-success">Mark Correct (£500)</button>
+                        <button id="mark-wrong-btn" class="btn-danger">Mark Wrong</button>
+                    </div>
+
+                    <div id="round3-points-display">
+                        <h4>Round 3 Points:</h4>
+                        <p>Stephanie's parent: £<span id="stephanie-points">0</span></p>
+                        <p>Bethanie's parent: £<span id="bethanie-points">0</span></p>
+                        <p>Varchie's parent: £<span id="varchie-points">0</span></p>
+                    </div>
+                </div>
+
+                <button id="skip-round3-btn" class="btn-secondary">Jump to Next Round</button>
+                <div class="game-info">
+                    <p>Current Round: <span id="round3-current-round">3</span></p>
+                    <p>Bank: <span id="round3-bank-amount">£0</span></p>
+                </div>
+
+                <div class="child-points-display">
+                    <h4>Child Points:</h4>
+                    <p>Stephanie: £<span id="child1-points">0</span> | Bethanie: £<span id="child2-points">0</span> | Varchie: £<span id="child3-points">0</span></p>
+                </div>
+            </section>
+
+            <!-- Final Round: Risk & Double -->
+            <section id="final-round-screen" class="screen">
+                <h2>Final Round: Risk & Double</h2>
+                <p>Pick 5 correct answers from a board of 12 to double your bank!</p>
+                <p>You can only get 3 wrong before the round ends.</p>
+                
+                <div id="final-board">
+                    <!-- 12 answer options will be displayed as cards -->
+                </div>
+
+                <button id="skip-final-round-btn" class="btn-secondary">Jump to Results</button>
+                <div class="game-info">
+                    <p>Correct needed: <span id="correct-needed">5</span> | Wrong allowed: <span id="wrong-allowed">3</span></p>
+                    <p>Bank: <span id="final-bank-amount">£0</span></p>
+                </div>
+
+                <div class="child-points-display">
+                    <h4>Child Points:</h4>
+                    <p>Stephanie: £<span id="child1-points">0</span> | Bethanie: £<span id="child2-points">0</span> | Varchie: £<span id="child3-points">0</span></p>
+                </div>
+            </section>
+
+            <!-- Results Screen -->
+            <section id="results-screen" class="screen">
+                <h2>Game Results</h2>
+                <p>The Parent's Evening has concluded!</p>
+
+                <div id="results-content">
+                    <!-- Results will be shown here -->
+                </div>
+
+                <button id="play-again-btn" class="btn-primary">Play Again</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Parent's Evening with Romesh Ranganathan - A comedy game show experience</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
